@@ -1,0 +1,15 @@
+C:\Users\Master\source\repos\FinalPr\FinalPr\obj\Debug\FinalPr.csproj.AssemblyReference.cache
+C:\Users\Master\source\repos\FinalPr\FinalPr\obj\Debug\MainWindow.g.cs
+C:\Users\Master\source\repos\FinalPr\FinalPr\obj\Debug\App.g.cs
+C:\Users\Master\source\repos\FinalPr\FinalPr\obj\Debug\FinalPr_MarkupCompile.cache
+C:\Users\Master\source\repos\FinalPr\FinalPr\obj\Debug\FinalPr_MarkupCompile.lref
+C:\Users\Master\source\repos\FinalPr\FinalPr\bin\Debug\FinalPr.exe.config
+C:\Users\Master\source\repos\FinalPr\FinalPr\bin\Debug\FinalPr.exe
+C:\Users\Master\source\repos\FinalPr\FinalPr\bin\Debug\FinalPr.pdb
+C:\Users\Master\source\repos\FinalPr\FinalPr\obj\Debug\MainWindow.baml
+C:\Users\Master\source\repos\FinalPr\FinalPr\obj\Debug\FinalPr.g.resources
+C:\Users\Master\source\repos\FinalPr\FinalPr\obj\Debug\FinalPr.Properties.Resources.resources
+C:\Users\Master\source\repos\FinalPr\FinalPr\obj\Debug\FinalPr.csproj.GenerateResource.cache
+C:\Users\Master\source\repos\FinalPr\FinalPr\obj\Debug\FinalPr.csproj.CoreCompileInputs.cache
+C:\Users\Master\source\repos\FinalPr\FinalPr\obj\Debug\FinalPr.exe
+C:\Users\Master\source\repos\FinalPr\FinalPr\obj\Debug\FinalPr.pdb
