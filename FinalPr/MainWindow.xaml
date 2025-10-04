@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalPr"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Text Editor" Height="600" Width="900">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -49,35 +49,39 @@
             </MenuItem>
         </Menu>
 
-        <ToolBar Grid.Row="1" Background="WhiteSmoke">
-            <Button Click="NewFile_Click" ToolTip="New File">
-                <Image Source="pack://application:,,,/Images/new.png" Width="16" Height="16"/>
+        <ToolBar Grid.Row="1" Background="WhiteSmoke" Padding="5">
+            <Button Click="NewFile_Click" ToolTip="New File (Ctrl+N)" Padding="5">
+                <TextBlock Text="📄" FontSize="16"/>
             </Button>
-            <Button Click="OpenFile_Click" ToolTip="Open File">
-                <Image Source="pack://application:,,,/Images/open.png" Width="16" Height="16"/>
+            <Button Click="OpenFile_Click" ToolTip="Open File (Ctrl+O)" Padding="5">
+                <TextBlock Text="📂" FontSize="16"/>
             </Button>
-            <Button Click="SaveFile_Click" ToolTip="Save File">
-                <Image Source="pack://application:,,,/Images/save.png" Width="16" Height="16"/>
-            </Button>
-            <Separator/>
-
-            <Button Click="Bold_Click" ToolTip="Bold" Name="BoldButton">
-                <TextBlock Text="B" FontWeight="Bold"/>
-            </Button>
-            <Button Click="Italic_Click" ToolTip="Italic" Name="ItalicButton">
-                <TextBlock Text="I" FontStyle="Italic"/>
-            </Button>
-            <Button Click="Underline_Click" ToolTip="Underline" Name="UnderlineButton">
-                <TextBlock Text="U" TextDecorations="Underline"/>
+            <Button Click="SaveFile_Click" ToolTip="Save File (Ctrl+S)" Padding="5">
+                <TextBlock Text="💾" FontSize="16"/>
             </Button>
             <Separator/>
 
-            <ComboBox Name="FontFamilyComboBox" Width="150" SelectionChanged="FontFamily_Changed"/>
-            <ComboBox Name="FontSizeComboBox" Width="60" SelectionChanged="FontSize_Changed"/>
+            <Button Click="Bold_Click" ToolTip="Bold (Ctrl+B)" Name="BoldButton" Padding="5" MinWidth="30">
+                <TextBlock Text="B" FontWeight="Bold" FontSize="14"/>
+            </Button>
+            <Button Click="Italic_Click" ToolTip="Italic (Ctrl+I)" Name="ItalicButton" Padding="5" MinWidth="30">
+                <TextBlock Text="I" FontStyle="Italic" FontSize="14"/>
+            </Button>
+            <Button Click="Underline_Click" ToolTip="Underline (Ctrl+U)" Name="UnderlineButton" Padding="5" MinWidth="30">
+                <TextBlock Text="U" TextDecorations="Underline" FontSize="14"/>
+            </Button>
             <Separator/>
 
-            <Button Click="TextColor_Click" ToolTip="Text Color" Background="Black" Width="30" Height="20" Name="TextColorButton"/>
-            <Button Click="BackgroundColor_Click" ToolTip="Background Color" Background="White" Width="30" Height="20" Name="BackgroundColorButton"/>
+            <TextBlock Text="Font:" VerticalAlignment="Center" Margin="5,0"/>
+            <ComboBox Name="FontFamilyComboBox" Width="150" SelectionChanged="FontFamily_Changed" VerticalAlignment="Center"/>
+            <TextBlock Text="Size:" VerticalAlignment="Center" Margin="5,0"/>
+            <ComboBox Name="FontSizeComboBox" Width="60" SelectionChanged="FontSize_Changed" VerticalAlignment="Center"/>
+            <Separator/>
+
+            <TextBlock Text="Color:" VerticalAlignment="Center" Margin="5,0"/>
+            <Button Click="TextColor_Click" ToolTip="Text Color" Background="Black" Width="30" Height="20" Name="TextColorButton" BorderBrush="Gray" BorderThickness="1"/>
+            <TextBlock Text="Background:" VerticalAlignment="Center" Margin="5,0"/>
+            <Button Click="BackgroundColor_Click" ToolTip="Background Color" Background="Yellow" Width="30" Height="20" Name="BackgroundColorButton" BorderBrush="Gray" BorderThickness="1"/>
         </ToolBar>
 
         <Grid Grid.Row="2" Name="SearchPanel" Visibility="Collapsed" Background="LightYellow">
@@ -92,21 +96,23 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Column="0" Text="Find:" Margin="5" VerticalAlignment="Center"/>
-            <TextBox Grid.Column="1" Name="FindTextBox" Margin="5" Height="25"/>
+            <TextBox Grid.Column="1" Name="FindTextBox" Margin="5" Height="25" VerticalAlignment="Center"/>
             <TextBlock Grid.Column="2" Text="Replace:" Margin="5" VerticalAlignment="Center"/>
-            <TextBox Grid.Column="3" Name="ReplaceTextBox" Margin="5" Height="25"/>
-            <Button Grid.Column="4" Content="Find Next" Click="FindNext_Click" Margin="5"/>
-            <Button Grid.Column="5" Content="Replace" Click="ReplaceOne_Click" Margin="5"/>
-            <Button Grid.Column="6" Content="Close" Click="CloseSearch_Click" Margin="5"/>
+            <TextBox Grid.Column="3" Name="ReplaceTextBox" Margin="5" Height="25" VerticalAlignment="Center"/>
+            <Button Grid.Column="4" Content="Find Next" Click="FindNext_Click" Margin="5" Padding="10,3"/>
+            <Button Grid.Column="5" Content="Replace" Click="ReplaceOne_Click" Margin="5" Padding="10,3"/>
+            <Button Grid.Column="6" Content="✕" Click="CloseSearch_Click" Margin="5" Padding="10,3" ToolTip="Close"/>
         </Grid>
 
-        <RichTextBox Grid.Row="3" Name="MainTextBox" 
-                     AcceptsReturn="True" 
+        <RichTextBox Grid.Row="3" Name="MainTextBox"
+                     AcceptsReturn="True"
                      AcceptsTab="True"
                      VerticalScrollBarVisibility="Auto"
                      HorizontalScrollBarVisibility="Auto"
                      SelectionChanged="MainTextBox_SelectionChanged"
-                     Margin="5"/>
+                     Margin="5"
+                     FontFamily="Arial"
+                     FontSize="12"/>
 
         <StatusBar Grid.Row="4" Background="LightGray">
             <StatusBarItem>
